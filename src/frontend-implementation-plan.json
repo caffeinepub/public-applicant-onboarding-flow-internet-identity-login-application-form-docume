@@ -1,0 +1,28 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix invalid deployment domain slug and ensure root route serves login for public build",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Update frontend metadata/routing so the deployment domain slug is valid (no ':' characters) and the public build loads the login page at '/' while preserving the existing authenticated flow (Details -> Upload -> Confirmation).",
+      "acceptanceCriteria": [
+        "A valid domain slug is configured that satisfies: length 5–50 and characters limited to letters, numbers, and hyphens (no ':' characters).",
+        "A production/live deployment completes successfully without the previous domain validation error.",
+        "The deployed app is publicly accessible and loads the expected login page at the root route ('/'), then supports the existing end-to-end flow after login (Details -> Upload -> Confirmation)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the app/page title (and any other public-facing name strings in this file) to remove the ':' character and align with a slug-safe naming convention so automated domain slug generation no longer produces an invalid slug like 'public-applicant-onboarding-flow:-internet-identit'."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Adjust the root route ('/') behavior so unauthenticated users see the existing LoginRegisterPage directly at '/', while authenticated users continue to be routed into the existing step-gated flow (Details -> Upload -> Confirmation) without changing the onboarding behavior."
+        }
+      ]
+    }
+  ]
+}

@@ -1,2 +1,3 @@
-# public-applicant-onboarding-flow-internet-identity-login-application-form-docume
-Exported from Caffeine project: Public applicant onboarding flow: Internet Identity login, application form, document upload, confirmation
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

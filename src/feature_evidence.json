@@ -1,0 +1,26 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-production-deployment-configuration-to-use-a-valid-domain-slug-5-50-characters-only-lowercase-uppercase-letters-numbers-and-hyphens-no-colons-or-other-symbols-instead-of-the-invalid-slug-public-applicant-onboarding-flow-internet-identit-and-deploy-the-app-as-a-live-public-build",
+      "featureTitle": "Fix the production deployment configuration to use a valid domain slug (5–50 characters; only lowercase/uppercase letters, numbers, and hyphens; no colons or other symbols) instead of the invalid slug 'public-applicant-onboarding-flow:-internet-identit', and deploy the app as a live/public build.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T15:22:00.704Z",
+  "summary": "Diff focuses on frontend routing/UX changes (ensuring '/' shows login and guarding steps) and a change to the HTML <title>. There is no clear evidence of any production deployment configuration change that would fix the invalid domain slug, so REQ-8’s core deployment/config objective appears unimplemented in the provided diff summary.",
+  "missing_requirements": [
+    {
+      "id": "REQ-8",
+      "requirement": "Fix the production deployment configuration to use a valid domain slug (5–50 characters; only letters, numbers, and hyphens; no colons or other symbols) instead of the invalid slug 'public-applicant-onboarding-flow:-internet-identit', and deploy the app as a live/public build.",
+      "reason": "No deployment/hosting configuration files are shown as modified (e.g., dfx.json, canister config, deployment pipeline config). The only slug-related change visible is an HTML title update, which does not demonstrate a valid domain slug being configured for production deployment.",
+      "evidence": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend-file-summaries.txt"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Changed routing behavior to remove/avoid a dedicated '/login' route and enforce that unauthenticated users see LoginRegisterPage at '/', with protected route wrappers and step-guard redirects.",
+      "reason": "REQ-8 is specifically about fixing a production domain slug for live deployment. While the AC mentions '/' should load the login page, the diff implements broader routing/guard logic that is not explicitly requested as part of fixing the domain slug configuration.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Changed HTML document title to \"Public Applicant Onboarding Flow\" described as \"slug-safe\".",
+      "reason": "REQ-8 requires configuring a valid *domain slug* in production deployment config; changing the page title is not the same as setting a deployment domain slug and was not requested explicitly.",
+      "evidence": [
+        "frontend/index.html",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Updated project metadata/state describing features and requests.",
+      "reason": "Not part of REQ-8 and not needed to fix deployment domain slug validation.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "build_request",
+  "title": "Deploy the application as a live/public build (fix invalid domain slug)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Fix the production deployment configuration to use a valid domain slug (5–50 characters; only lowercase/uppercase letters, numbers, and hyphens; no colons or other symbols) instead of the invalid slug 'public-applicant-onboarding-flow:-internet-identit', and deploy the app as a live/public build.",
+      "target": "unknown",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Domain public-applicant-onboarding-flow:-internet-identit must be between 5 and 50 characters and contain only letters, numbers, and hyphens.",
+          "Plz create the live app"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A valid domain slug is configured that satisfies: length 5–50 and characters limited to letters, numbers, and hyphens (no ':' characters).",
+        "A production/live deployment completes successfully without the previous domain validation error.",
+        "The deployed app is publicly accessible and loads the expected login page at the root route ('/'), then supports the existing end-to-end flow after login (Details -> Upload -> Confirmation)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/components/ui or any other paths listed as immutable by the system context.",
+    "Keep the backend as a single Motoko actor (no additional canisters/services)."
+  ],
+  "nonGoals": [
+    "Adding new application features or changing the existing onboarding flow behavior beyond what is required to achieve a successful live deployment.",
+    "Introducing third-party services (custom auth providers, external databases, hosting providers) outside the Internet Computer deployment model."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

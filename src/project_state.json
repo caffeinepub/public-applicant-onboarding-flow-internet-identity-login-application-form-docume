@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a public-facing application flow: users register/login, fill an applicant details form, upload required documents, then see a confirmation/notification that documents were sent to admin via email/WhatsApp.",
+  "architectural_notes": [
+    "Production deployment/domain must use a valid slug: 5–50 characters, only letters, numbers, and hyphens."
+  ],
+  "known_issues": [
+    "Deployment failed due to invalid domain slug: 'public-applicant-onboarding-flow:-internet-identit' contains invalid characters/format and must be 5–50 chars with only letters, numbers, and hyphens."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-public-authentication-using-internet-identity-including-a-dedicated-login-register-screen-and-a-protected-post-login-flow-unauthenticated-users-are-redirected-to-login-when-attempting-to-access-protected-pages",
+      "title": "Implement public authentication using Internet Identity, including a dedicated Login/Register screen and a protected post-login flow (unauthenticated users are redirected to login when attempting to access protected pages).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-consistent-multi-step-user-flow-after-login-with-these-screens-in-order-1-applicant-details-form-2-document-upload-3-final-confirmation-notification-include-clear-navigation-rules-so-users-cannot-access-later-steps-without-completing-earlier-steps",
+      "title": "Create a consistent multi-step user flow after login with these screens in order: (1) Applicant Details Form, (2) Document Upload, (3) Final Confirmation/Notification; include clear navigation rules so users cannot access later steps without completing earlier steps.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-applicant-details-form-page-containing-fields-applicant-name-father-name-address-service-opted-for-validate-required-fields-and-submit-the-application-to-the-backend",
+      "title": "Build the Applicant Details Form page containing fields: Applicant name, Father name, Address, Service opted for; validate required fields and submit the application to the backend.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-document-upload-page-that-allows-users-to-upload-one-or-more-files-for-their-submitted-application-persist-uploaded-documents-in-the-backend-associated-with-the-authenticated-user-s-application",
+      "title": "Build a Document Upload page that allows users to upload one or more files for their submitted application; persist uploaded documents in the backend associated with the authenticated user’s application.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-final-confirmation-notification-page-shown-after-document-upload-that-informs-the-user-in-english-that-their-documents-have-been-submitted-and-indicates-they-were-sent-to-admin-email-whatsapp-as-a-status-message",
+      "title": "Create a final Confirmation/Notification page shown after document upload that informs the user (in English) that their documents have been submitted and indicates they were “sent to admin email/WhatsApp” as a status message.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-distinct-visual-theme-across-the-app-colors-typography-spacing-component-styling-suitable-for-a-formal-application-submission-workflow-ensuring-consistency-across-all-pages-and-states",
+      "title": "Apply a cohesive, distinct visual theme across the app (colors, typography, spacing, component styling) suitable for a formal application/submission workflow, ensuring consistency across all pages and states.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-production-deployment-configuration-to-use-a-valid-domain-slug-5-50-characters-only-lowercase-uppercase-letters-numbers-and-hyphens-no-colons-or-other-symbols-instead-of-the-invalid-slug-public-applicant-onboarding-flow-internet-identit-and-deploy-the-app-as-a-live-public-build",
+      "title": "Fix the production deployment configuration to use a valid domain slug (5–50 characters; only lowercase/uppercase letters, numbers, and hyphens; no colons or other symbols) instead of the invalid slug 'public-applicant-onboarding-flow:-internet-identit', and deploy the app as a live/public build.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Public login/register page (user authentication)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Post-login applicant details form (name, father name, address, service opted) with submit action",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Document upload page after form submission",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Final notification/confirmation screen indicating documents were sent to admin email/WhatsApp",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Implement Motoko backend APIs and data model to support: authenticated user application record (applicant details + status), document storage (filename, content type, size, bytes), and retrieval of a user’s current application state to enforce the step flow on the frontend.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Deploy the app as a live/public build (production deployment)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Public applicant onboarding flow: Internet Identity login, application form, document upload, confirmation",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

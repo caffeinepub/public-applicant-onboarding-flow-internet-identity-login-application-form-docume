@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup where the root route ('/') directly renders LoginRegisterPage for unauthenticated users and redirects authenticated users to '/details', removing the separate '/login' route to ensure public builds load the login page at the root path.",
+  "frontend/src/components/AppLayout.tsx": "Shared layout wrapper providing consistent header with branding, logout button, main content area, and footer with attribution across all authenticated pages.",
+  "frontend/src/pages/LoginRegisterPage.tsx": "Public login/register page with Internet Identity authentication, featuring a welcoming hero section, step preview cards, and clear call-to-action for signing in, with Tailwind v3 compliant class names.",
+  "frontend/src/pages/ApplicantDetailsPage.tsx": "First step of the application flow with a validated form collecting applicant name, father's name, address, and service selection, including user profile setup modal for first-time users.",
+  "frontend/src/pages/DocumentUploadPage.tsx": "Second step allowing users to select and upload multiple documents with drag-and-drop support, real-time progress tracking, and visual status indicators for each file, using Tailwind v3 compliant class names.",
+  "frontend/src/pages/ConfirmationPage.tsx": "Final confirmation screen displaying success message with email/WhatsApp notification status and clear next actions including logout option, with Tailwind v3 compliant class names.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for fetching and saving user profile data with proper cache invalidation.",
+  "frontend/src/hooks/useApplicationStatus.ts": "React Query hook to fetch the current user's application status including details and uploaded documents for step flow enforcement.",
+  "frontend/src/hooks/useSubmitApplicantDetails.ts": "React Query mutation hook for submitting applicant details form data to the backend with automatic cache invalidation.",
+  "frontend/src/hooks/useUploadApplicationDocuments.ts": "React Query mutation hook for uploading document blobs to the backend with automatic application status refresh.",
+  "frontend/index.css": "Global styles with OKLCH-based color system featuring a professional blue primary color, refined neutrals, and proper light/dark mode support for a formal application aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended color tokens, Inter font family, custom shadows, and refined border radius values for a polished, professional design system.",
+  "frontend/src/main.tsx": "Application entry point that sets up React Query, Internet Identity provider, and renders the main App component with correct CSS import path from src directory.",
+  "frontend/src/index.css": "Global styles with OKLCH-based color system featuring a professional blue primary color, refined neutrals, and proper light/dark mode support for a formal application aesthetic.",
+  "frontend/index.html": "HTML entry point with a slug-safe title \"Public Applicant Onboarding Flow\" that contains only letters, spaces, and hyphens (no colons or special characters)."
+}
